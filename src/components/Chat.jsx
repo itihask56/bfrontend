@@ -42,8 +42,7 @@ const Chat = () => {
       //   body: JSON.stringify({ userInput: input, sessionId: sessionId }),
       // });
       
-      // const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-      // console.log(API_URL)
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
       const response = await fetch(`${API_URL}/chat`, {
         method: 'POST',
