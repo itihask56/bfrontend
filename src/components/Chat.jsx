@@ -42,7 +42,8 @@ const Chat = () => {
       //   body: JSON.stringify({ userInput: input, sessionId: sessionId }),
       // });
       
-      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      // const API_URL = "http://localhost:3000";
+      const API_URL="https://bbackend-p5tm.onrender.com"
 
       const response = await fetch(`${API_URL}/chat`, {
         method: 'POST',
