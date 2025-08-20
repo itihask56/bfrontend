@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router';
 
-// एक यूनिक सेशन ID जेनरेट करें
 const sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
 
@@ -36,12 +34,21 @@ const Chat = () => {
 
     try {
       // बैकएंड API को कॉल करें
-      const response = await fetch('http://localhost:3000/chat', {
+      // const response = await fetch('http://localhost:3000/chat', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ userInput: input, sessionId: sessionId }),
+      // });
+      
+      // const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      // console.log(API_URL)
+
+      const response = await fetch(`${API_URL}/chat`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userInput: input, sessionId: sessionId }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userInput: input, sessionId })
       });
 
       if (!response.ok) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { BackgroundLines } from "../components/ui/background-lines";
 import { Link } from "react-router";
-import Chat from "./Chat";
+ 
 
 
 export default function BackgroundLinesDemo() {
